@@ -10,7 +10,26 @@ Does the new file show up in the directory where you ran your scripts?
 
 What if you add a different directory path to the filename passed to open?
 
- 
 
 Note: file write methods do not add newline characters to your strings; add an explicit "\n" at the end of the string 
-if you want to fully terminate the line in the file.'''
+if you want to fully terminate the line in the file.
+'''
+
+
+#open a file to write
+
+f = open("myfile.txt", "w")
+
+newtext = ("Hello file world!")
+for line in newtext:
+    #write line to output file
+    f.write(line)
+f.close()
+
+#open file to read it
+f = open("myfile.txt", "r")
+#readlines to read all the lines there
+lines = f.readlines()
+print(lines)
+
+f.close()
