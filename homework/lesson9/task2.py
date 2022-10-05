@@ -19,3 +19,17 @@ The first argument to the application should be the name of the phonebook.
 Application should load JSON data, if it is present in the folder with application, else raise an error.
 After the user exits, all data should be saved to loaded JSON.
 '''
+
+import json
+
+
+def new_entries(name, number):
+    
+    
+def first_name_search():
+
+def last_name_search():
+    
+def full_name_search():
+    
+def phone_numb_search():
