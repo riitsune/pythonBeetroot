@@ -20,8 +20,8 @@ if you want to fully terminate the line in the file.
 
 f = open("myfile.txt", "w")
 
-newtext = ("Hello file world!")
-for line in newtext:
+new_text = ("Hello file world!")
+for line in new_text:
     #write line to output file
     f.write(line)
 f.close()
