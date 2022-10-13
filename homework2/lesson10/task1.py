@@ -1,9 +1,12 @@
-'''Task 1
-
-A Person class
-
-Make a class called Person. Make the __init__() method take firstname, lastname, and age as parameters and add them as attributes. 
-Make another method called talk() which makes prints a greeting from the person containing, for example like this:
-
-"Hello, my name is Carl Johnson and I’m 26 years old"
 '''
+Task 1
+
+Write a Python program to detect the number of local variables declared in a function.
+'''
+
+def count_vars():
+    var1 = 4
+    var2 = "hey you"
+    var3 = [1,2,3,4,5]
+    var4 = 1
+print(count_vars.__code__.co_nlocals)
