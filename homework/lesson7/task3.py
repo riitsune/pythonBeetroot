@@ -18,7 +18,7 @@ def make_operation(operator, *args):
     elif operator == "-":
         sub_result = args[0]
         for arg in args:
-            sub_result -= arg
+            sub_result -= arg[1:]
         return sub_result
     elif operator == "*":
         multi = 1
