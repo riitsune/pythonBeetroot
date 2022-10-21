@@ -18,7 +18,7 @@ if you want to fully terminate the line in the file.
 
 #open a file to write
 
-f = open("myfile.txt", "w")
+f = open("my_file.txt", "w")
 
 new_text = ("Hello file world!")
 for line in new_text:
@@ -27,7 +27,7 @@ for line in new_text:
 f.close()
 
 #open file to read it
-f = open("myfile.txt", "r")
+f = open("my_file.txt", "r")
 #readlines to read all the lines there
 lines = f.readlines()
 print(lines)
