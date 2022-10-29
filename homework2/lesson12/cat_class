@@ -1,0 +1,41 @@
+'''
+Coding 4. Create a class that describes a cat.
+The class must have attributes “name”, “age”, “coat_color” at least.
+Also this class will define the method “voice” that prints the string “Meow!”.
+ Feel free to add any other attributes or methods that are essential
+ for a cat in your opinion. Create two instances of this class,
+ call “voice” method on both of them,
+change the initial value of “age” for one of them and “name” for another.
+'''
+
+class Cat:
+    def __init__(self, name, age, color):
+        self.name = name
+        self.age = age
+        self.color = color
+
+    def voice(self):
+        print("Meow!")
+
+    def change_age(self, age):
+        self.age = age
+
+    def change_name(self, name):
+        self.name = name
+
+
+    def get_to_know_the_cat(self):
+        return (f"This cat called {self.name}, it's {self.age} years old and its fur is {self.color}")
+
+cat_Sam = Cat("Sam", "3", "black")
+cat_Lilly = Cat("Lilly", "2", "ginger")
+print(cat_Sam.get_to_know_the_cat())
+
+print(cat_Sam.voice())
+print(cat_Lilly.voice())
+
+cat_Sam.change_age('5')
+cat_Lilly.change_name("Goldy")
+
+print(cat_Sam.get_to_know_the_cat())
+print(cat_Lilly.get_to_know_the_cat())
