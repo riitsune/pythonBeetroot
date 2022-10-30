@@ -13,10 +13,10 @@ class Dog():
         self.name = name
         self.age = age
 
-    def human_age(self,age_factor, age):
-        return int(age)*age_factor
+    def human_age(self):
+        return int(self.age)*self.age_factor
 
 
 dog_1 = Dog("Antonio", "5")
 
-print(dog_1.human_age(7,5))
+print(dog_1.human_age())
