@@ -4,6 +4,12 @@ Add any attributes and methods essential for each one in your opinion.
  By desire you may use an inheritance principle to gather common attributes and methods into some parent class.
 
 '''
+'''
+. Create classes that will describe a Bus Driver, a Student and a Patient of the Hospital.
+Add any attributes and methods essential for each one in your opinion.
+ By desire you may use an inheritance principle to gather common attributes and methods into some parent class.
+
+'''
 class Person:
     def __init__(self, name, gender, age, nationality):
         self.name = name
@@ -12,10 +18,8 @@ class Person:
         self.nationality = nationality
 
 
-    def __repr__(self):
-        return (self.name+ ","+ self.gender+","+str(self.age) +","
-                +self.nationality +"," + self.occupation +"," + self.marital_status)
-
+    def __str__(self):
+            return self.name+ ","+ self.gender+","+str(self.age) +"," +self.nationality
 
 class BusDriver(Person):
     def __init__(self, name, gender, age, nationality, salary, route,experience, licence_category):
