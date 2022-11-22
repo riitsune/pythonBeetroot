@@ -38,11 +38,11 @@ class Item:
             print(results)
             c.execute(f"""INSERT INTO items VALUES (:name, :type, :price, :quantity)""",
               {'name': self.name, 'type': self.item_type, 'price': self.price, 'quantity': self.quantity})
-
-    def delete_all(self, conn):
+            
+    def delete_all(self):
         with conn:
-            c = conn.cursor()
-            c.execute("""DELETE * FROM items""")
+            c.execute("""DELETE FROM items""")
+
 
 
 class Book(Item):
