@@ -41,6 +41,7 @@ class Item:
 
     def delete_all(self, conn):
         with conn:
+            c = conn.cursor()
             c.execute("""DELETE * FROM items""")
 
 
