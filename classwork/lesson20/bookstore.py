@@ -30,17 +30,18 @@ class Item:
         self.price = price
         self.quantity = quantity
 
-
     def add_item(self, conn):
         with conn:
             c = conn.cursor()
-            c.execute("SELECT name, quantity FROM items WHERE name = :name and type =:type"  , {'name': self.name, 'type':self.item_type} )
+            c.execute("SELECT name, quantity FROM items WHERE name = :name and type =:type", {'name': self.name, 'type': self.item_type})
             results = c.fetchall()
             print(results)
             c.execute(f"""INSERT INTO items VALUES (:name, :type, :price, :quantity)""",
-              {'name': self.name, 'type': self.item_type, 'price': self.price, 'quantity': self.quantity })
+              {'name': self.name, 'type': self.item_type, 'price': self.price, 'quantity': self.quantity})
 
-
+    def delete_all(self, conn):
+        with conn:
+            c.execute("""DELETE * FROM items""")
 
 
 class Book(Item):
@@ -64,9 +65,12 @@ if __name__ == "__main__":
     conn = sqlite3.connect('bookstore.db')
     c = conn.cursor()
 
-    Item.create_table(conn)
-    postcard1.add_item(conn)
-    book1.add_item(conn)
+    Item.delete_all(conn)
+    print(c.fetchall())
+    #
+    # Item.create_table(conn)
+    # postcard1.add_item(conn)
+    # book1.add_item(conn)
 
     # c.execute("SELECT * FROM items")
     # print(c.fetchall())
@@ -76,12 +80,4 @@ if __name__ == "__main__":
 
 
 
-# def insert_pers(pers):
-#     with conn:
-#         c.execute(f"""INSERT INTO persons VALUES (:name, :age, :gender)""",
-#                   {'name': pers.name, 'age': pers.age, 'gender': pers.gender})
 
-#
-# def get_pers_by_gender(gender):
-#     c.execute("SELECT * FROM persons WHERE gender = :gender", {'gender': gender})
-#     return c.fetchall()
